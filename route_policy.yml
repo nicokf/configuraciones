@@ -13,6 +13,9 @@
             2800:810::/28 le 48
           end-set
           
+        - exit
+        - commit
+          
         - route-policy AS-63293-FACEBOOK-IPV6
             if destination in DEFAULT-IPV6 then
               drop
@@ -33,6 +36,9 @@
             endif
             set community FB-HIGH additive
           end-policy
+          
+        - exit
+        - commit 
 
     register: route_policy
 
