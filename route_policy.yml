@@ -1,6 +1,6 @@
 ---
 - name: Route_policy
-  hosts: all
+  hosts: 192.168.60.115
   gather_facts: false
   connection: local
 
@@ -13,7 +13,7 @@
             2800:810::/28 le 48
           end-set
           
-        - exit
+        
         - commit
           
         - route-policy AS-63293-FACEBOOK-IPV6
@@ -37,7 +37,7 @@
             set community FB-HIGH additive
           end-policy
           
-        - exit
+        
         - commit 
 
     register: route_policy
