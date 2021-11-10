@@ -1,0 +1,41 @@
+---
+- name: Route_policy
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: vty
+    ios_command:
+      commands:
+
+        - prefix-set REDES-Y-SUBREDES-TELECENTRO-IPV6-48
+            2800:810::/28 le 48
+          end-set
+          
+        - route-policy AS-63293-FACEBOOK-IPV6
+            if destination in DEFAULT-IPV6 then
+              drop
+            endif
+            if destination in REDES-RESERVADAS-IPV6 then
+              drop
+            endif
+            if destination in REDES-Y-SUBREDES-TELECENTRO-IPV6-48 then
+              done
+            endif
+            if community matches-any HUBS then
+              set community FB-LOW additive
+              done
+            endif
+            if community matches-any CLIENTES then
+              set community FB-DEFAULT additive
+              done
+            endif
+            set community FB-HIGH additive
+          end-policy
+
+    register: route_policy
+
+  - name: imprimimos la info
+    debug:
+      var: route_policy
