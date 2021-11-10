@@ -1,6 +1,6 @@
 ---
 - name: Route_policy
-  hosts: 192.168.60.115
+  hosts: all
   gather_facts: false
   connection: local
 
