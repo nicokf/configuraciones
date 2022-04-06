@@ -1,8 +1,8 @@
 ---
 - name: Configuracion_BE_LM-PE
-  hosts: localhost
+  hosts: LM-PE
   gather_facts: no
-  connection: network_cli
+  connection: ansible.netcommon.network_cli
 
   tasks:
     - name: Crear BE
