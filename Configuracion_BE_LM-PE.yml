@@ -6,7 +6,7 @@
 
   tasks:
     - name: Crear BE
-      ios_config:
+      cisco.iosxr.iosxr_config:
         save_when: modified
         lines:
           - config t
