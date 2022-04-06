@@ -11,7 +11,6 @@
         - description ##CDN## NETFLIX c001.eze009.telecentro.isp (190.55.32.161-2800:810:202::1e)
         - l2transport
         - shut 
-        - commit
         parents: interface Bundle-Ether40027
       register: BundleEth
 
