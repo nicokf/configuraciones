@@ -1,6 +1,6 @@
 ---
 - name: Configuracion_BE_LM-PE
-  hosts: localhost
+  hosts: all
   gather_facts: no
   connection: network_cli
 
