@@ -1,8 +1,8 @@
 ---
 - name: Configuracion_BE_LM-PE
-  hosts: all
+  hosts: localhost
   gather_facts: no
-  connection: localhost
+  connection: local
 
   tasks:
     - name: Crear BE
