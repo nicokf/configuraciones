@@ -2,58 +2,31 @@
 - name: Configuracion_BE_LM-PE
   hosts: localhost
   gather_facts: no
-  connection: local
+  connection: network_cli
 
   tasks:
     - name: Crear BE
       cisco.iosxr.iosxr_config:
-        save_when: modified
+        
         lines:
-          - config t
-          - interface Bundle-Ether40027
+          
           - description ##CDN## NETFLIX c001.eze009.telecentro.isp (190.55.32.161-2800:810:202::1e)
           - l2transport
           - shut 
           - commit
-          - exit
-          - interface Bundle-Ether40028
+          parents: interface Bundle-Ether40027
+          
+          
           - description ##CDN## NETFLIX c002.eze009.telecentro.isp (190.55.32.162-2800:810:202::1f)
           - l2transport
           - shut
           - commit
-          - exit
-          - interface Bundle-Ether40029
-          - description ##CDN## NETFLIX c003.eze009.telecentro.isp (190.55.32.163-2800:810:202::20)
-          - l2transport
-          - shut
-          - commit
-          - exit
-          - interface Bundle-Ether40030
-          - description ##CDN## NETFLIX c006.eze009.telecentro(190.55.32.164-2800:810:202::121)
-          - l2transport
-          - shut
-          - commit
-          - exit
-          - interface Bundle-Ether40031
-          - description ##CDN## NETFLIX c007.eze009.telecentro(190.55.32.165-2800:810:202::122)
-          - l2transport
-          - shut
-          - commit
-          - exit
-          - interface Bundle-Ether40032
-          - description ##CDN## NETFLIX c005.eze009.telecentro(190.55.32.166-2800:810:202::123)
-          - l2transport
-          - shut
-          - commit
-          - exit
-          - interface Bundle-Ether40033
-          - description ##CDN## NETFLIX c004.eze009.telecentro(190.55.32.167-2800:810:202::124)
-          - l2transport
-          - shut
-          - commit
-          - exit
+          parents: interface Bundle-Ether40028
+          
+          
 
       register: BundleEth
 
     - name: ImprimirConfig
       debug: var=BundleEth
+          
