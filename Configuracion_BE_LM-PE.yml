@@ -1,6 +1,6 @@
 ---
 - name: Configuracion_BE_LM-PE
-  hosts: all
+  hosts: 192.168.60.43
   gather_facts: no
   connection: network_cli
 
