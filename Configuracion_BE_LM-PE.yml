@@ -12,7 +12,7 @@
         - l2transport
         - shut 
         parents: interface Bundle-Ether40027
-      when: ansible_network_os == 'cisco.iosxr.iosxr'
+      when: ansible_network_os == iosxr
       register: BundleEth
 
     - name: ImprimirConfig
