@@ -8,7 +8,7 @@
   tasks:
     - name: Crear BE    
       cisco.iosxr.iosxr_config:
-        src: playbook_dir + '/Config_BE_Netflix.txt'
+        src: https://github.com/nicokf/configuraciones.git + '/Config_BE_Netflix.txt'
 
       register: BundleEth
 
