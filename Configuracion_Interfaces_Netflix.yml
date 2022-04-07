@@ -1,0 +1,16 @@
+---
+- name: Configuracion_Interfaces_Netflix_LM-PE
+  hosts: LM-PE
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Crear Interfaces     
+      cisco.iosxr.iosxr_config:
+        src: "{{ playbook_dir }}/Interfaces_Netflix.txt"
+
+      register: BundleEth
+
+    - name: ImprimirConfig
+      debug: var=BundleEth
