@@ -1,0 +1,145 @@
+interface TenGigE0/0/0/0/0
+description ##CDN## {0001:NETFLIX:C001.EZE009}
+bundle id 40027 mode active
+shutdown
+
+interface TenGigE0/0/0/0/1
+description ##CDN## {0001:NETFLIX:C001.EZE009}
+bundle id 40027 mode active
+shutdown
+
+interface TenGigE0/0/0/0/2
+description ##CDN## {0001:NETFLIX:C001.EZE009}
+bundle id 40027 mode active
+shutdown
+
+interface TenGigE0/0/0/0/3
+description ##CDN## {0001:NETFLIX:C001.EZE009}
+bundle id 40027 mode active
+shutdown
+
+interface TenGigE0/0/0/0/4
+description ##CDN## {0001:NETFLIX:C002.EZE009}
+bundle id 40028 mode active
+shutdown
+
+interface TenGigE0/0/0/0/5
+description ##CDN## {0001:NETFLIX:C002.EZE009}
+bundle id 40028 mode active
+shutdown
+
+interface TenGigE0/0/0/0/6
+description ##CDN## {0001:NETFLIX:C002.EZE009}
+bundle id 40028 mode active
+shutdown
+
+interface TenGigE0/0/0/0/7
+description ##CDN## {0001:NETFLIX:C002.EZE009}
+bundle id 40028 mode active
+shutdown
+
+interface TenGigE0/0/0/0/8
+description ##CDN## {0001:NETFLIX:C003.EZE009}
+bundle id 40029 mode active
+shutdown
+
+interface TenGigE0/0/0/0/9
+description ##CDN## {0001:NETFLIX:C003.EZE009}
+bundle id 40029 mode active
+shutdown
+
+interface TenGigE0/0/0/1/0
+description ##CDN## {0001:NETFLIX:C003.EZE009}
+bundle id 40029 mode active
+shutdown
+
+interface TenGigE0/0/0/1/1
+description ##CDN## {0001:NETFLIX:C003.EZE009}
+bundle id 40029 mode active
+shutdown
+
+interface TenGigE0/0/0/1/2
+description ##CDN## {0001:NETFLIX:C006.EZE009}
+bundle id 40030 mode active
+shutdown
+
+interface TenGigE0/0/0/1/3
+description ##CDN## {0001:NETFLIX:C006.EZE009}
+bundle id 40030 mode active
+shutdown
+
+interface TenGigE0/0/0/1/4
+description ##CDN## {0001:NETFLIX:C006.EZE009}
+bundle id 40030 mode active
+shutdown
+
+interface TenGigE0/0/0/1/5
+description ##CDN## {0001:NETFLIX:C006.EZE009}
+bundle id 40030 mode active
+shutdown
+
+interface TenGigE0/0/0/1/6
+description ##CDN## {0001:NETFLIX:C007.EZE009}
+bundle id 40031 mode active
+shutdown
+
+interface TenGigE0/0/0/1/7
+description ##CDN## {0001:NETFLIX:C007.EZE009}
+bundle id 40031 mode active
+shutdown
+
+interface TenGigE0/0/0/1/8
+description ##CDN## {0001:NETFLIX:C007.EZE009}
+bundle id 40031 mode active
+shutdown
+
+interface TenGigE0/0/0/1/9
+description ##CDN## {0001:NETFLIX:C007.EZE009}
+bundle id 40031 mode active
+shutdown
+
+interface TenGigE0/0/0/2/0
+description ##CDN## {0001:NETFLIX:C005.EZE009}
+bundle id 40032 mode active
+shutdown
+
+interface TenGigE0/0/0/2/1
+description ##CDN## {0001:NETFLIX:C005.EZE009}
+bundle id 40032 mode active
+shutdown
+
+interface TenGigE0/0/0/2/2
+description ##CDN## {0001:NETFLIX:C005.EZE009}
+bundle id 40032 mode active
+shutdown
+
+interface TenGigE0/0/0/2/3
+description ##CDN## {0001:NETFLIX:C005.EZE009}
+bundle id 40032 mode active
+shutdown
+
+interface TenGigE0/0/0/2/4
+description ##CDN## {0001:NETFLIX:C004.EZE009}
+bundle id 40033 mode active
+shutdown
+
+interface TenGigE0/0/0/2/5
+description ##CDN## {0001:NETFLIX:C004.EZE009}
+bundle id 40033 mode active
+shutdown
+
+interface TenGigE0/0/0/2/6
+description ##CDN## {0001:NETFLIX:C004.EZE009}
+bundle id 40033 mode active
+shutdown
+
+interface TenGigE0/0/0/2/7
+description ##CDN## {0001:NETFLIX:C004.EZE009}
+bundle id 40033 mode active
+shutdown
+
+
+
+
+
+
