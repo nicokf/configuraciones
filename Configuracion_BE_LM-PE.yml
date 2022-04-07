@@ -10,7 +10,7 @@
         name: interface Bundle-Ether40027
         description: ##CDN## NETFLIX c001.eze009.telecentro.isp (190.55.32.161-2800:810:202::1e)
         enabled: flase
-      when: ansible_network_os == 'cisco.iosxr.iosxr'
+      
       
       register: BundleEth
 
