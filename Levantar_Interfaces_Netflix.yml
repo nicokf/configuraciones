@@ -1,0 +1,16 @@
+---
+- name: Levantar_Interfaces_Netflix_LM-PE
+  hosts: LM-PE
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Levantar Interfaces     
+      cisco.iosxr.iosxr_config:
+        src: "{{ playbook_dir }}/Levantar_interfaces_Netflix.txt"
+
+      register: Interfacesup
+
+    - name: ImprimirConfig
+      debug: var=Interfacesup
