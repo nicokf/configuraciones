@@ -1,27 +1,3 @@
-interface Bundle-Ether40027
-no shutdown 
-
-interface Bundle-Ether40028
-no shutdown
-
-interface Bundle-Ether40029
-no shutdown
-
-interface Bundle-Ether40030
-no shutdown
-
-interface Bundle-Ether40031
-no shutdown
-    
-interface Bundle-Ether40032
-no shutdown
-
-interface Bundle-Ether40033
-no shutdown
-
-interface TenGigE 0/0/0/0/0
-no shutdown
-
 interface TenGigE 0/0/0/0/1
 no shutdown
 
