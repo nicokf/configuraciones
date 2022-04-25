@@ -1,0 +1,47 @@
+interface Bundle-Ether10192.3500
+description ##VI## ACI-PROD-DATACENTER
+vrf DATACENTER
+ipv4 address 192.168.29.6 255.255.255.252
+encapsulation dot1q 3500
+!
+interface Bundle-Ether10192.3501
+description ##VI## ACI-PROD-SDS-01
+vrf SDS-01
+ipv4 address 192.168.29.22 255.255.255.252
+encapsulation dot1q 3501
+!
+interface Bundle-Ether10192.3502
+description ##VI## ACI-PROD-NSX-UDLY
+vrf NSX-UDLY
+ipv4 address 192.168.29.38 255.255.255.252
+encapsulation dot1q 3502
+!
+interface Bundle-Ether10192.3503
+description ##VI## ACI-PROD-VMOTION
+vrf VMOTION
+ipv4 address 192.168.29.54 255.255.255.252
+encapsulation dot1q 3503
+!
+interface Bundle-Ether10192.3504
+description ##VI## ACI-PROD-VIDEO-MCAST
+vrf VIDEO-MCAST
+ipv4 address 192.168.29.70 255.255.255.252
+encapsulation dot1q 3504
+!
+interface Bundle-Ether10192.3505
+description ##VI## ACI-PROD-VIDEO-MGMT
+vrf VIDEO-MGMT
+ipv4 address 192.168.29.86 255.255.255.252
+encapsulation dot1q 3505
+!
+interface Bundle-Ether10192.3506
+description ##VI## ACI-PROD-SISTEMAS
+vrf SISTEMAS
+ipv4 address 192.168.29.102 255.255.255.252
+encapsulation dot1q 3506
+!
+interface Bundle-Ether10192.3507
+description ##VI## ACI-PROD-WIFI2
+vrf WIFI2
+ipv4 address 192.168.29.118 255.255.255.252
+encapsulation dot1q 3507
