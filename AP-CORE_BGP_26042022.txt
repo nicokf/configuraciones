@@ -4,7 +4,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
    neighbor 192.168.29.1
    remote-as 65011
    description ACI-PRO-DATACENTER
@@ -24,7 +24,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
   neighbor 192.168.29.17
   remote-as 65011
   description ACI-PRO-SDS-01
@@ -45,7 +45,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
   neighbor 192.168.29.33
   remote-as 65011
   description ACI-PRO-NSX-UDLY
@@ -67,7 +67,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
  neighbor 192.168.29.49
  remote-as 65011
  description ACI-PRO-VMOTION
@@ -88,7 +88,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
  neighbor 192.168.29.65
  remote-as 65011
  description ACI-PRO-VIDEO-MCAST
@@ -109,7 +109,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
  neighbor 192.168.29.81
  remote-as 65011
  description ACI-PRO-VIDEO-MGMT
@@ -130,7 +130,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
  neighbor 192.168.29.97
  remote-as 65011
  description ACI-PRO-SISTEMAS
@@ -151,7 +151,7 @@ router bgp 27747
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   exit
  neighbor 192.168.29.113
  remote-as 65011
  description ACI-PRO-WIFI2
