@@ -1,0 +1,16 @@
+---
+- name: Configuracion_Cisco_ACI
+  hosts: AP-ASR99K-CORE-1
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Configurar BGP   
+      cisco.iosxr.iosxr_config:
+        src: "{{ playbook_dir }}/AP-CORE_BGP_26042022.txt"
+
+      register: Configurar_BGP
+
+    - name: ImprimirConfig
+      debug: var=Configurar_BGP

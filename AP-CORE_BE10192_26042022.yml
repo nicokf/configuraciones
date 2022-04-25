@@ -1,0 +1,16 @@
+---
+- name: Configuracion_Cisco_ACI
+  hosts: AP-ASR99K-CORE-1
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Crear Bundle-Ethernet_10192    
+      cisco.iosxr.iosxr_config:
+        src: "{{ playbook_dir }}/AP-CORE_BE10192_26042022.txt"
+
+      register: BundleEth_10192
+
+    - name: ImprimirConfig
+      debug: var=BundleEth_10192
