@@ -1,166 +1,174 @@
 router bgp 27747
- vrf DATACENTER
-  rd 192.168.60.8:140
-  address-family ipv4 unicast
-   redistribute connected
-   redistribute static
-
-  neighbor 192.168.29.9
-  remote-as 65011
-  description ACI-PRO-DATACENTER
-  address-family ipv4 unicast
-  route-policy ACI-PROD-DATACENTER-IN in
-  route-policy ACI-PROD-DATACENTER-OUT out
-
-  neighbor 192.168.29.13
-  remote-as 65011
-  description ACI-PRO-DATACENTER
-  address-family ipv4 unicast
-  route-policy ACI-PROD-DATACENTER-IN in
-  route-policy ACI-PROD-DATACENTER-OUT out
-
  vrf SDS-01
   rd 192.168.60.8:142
+  label mode per-vrf
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+  !
   neighbor 192.168.29.25
-  remote-as 65011
-  description ACI-PRO-SDS-01
-  address-family ipv4 unicast
-  route-policy ACI-PROD-SDS-01-IN in
-  route-policy ACI-PROD-SDS-01-OUT out
-
+   remote-as 65011
+   description ACI-PRO-SDS-01
+   address-family ipv4 unicast
+    route-policy ACI-PROD-SDS-01-IN in
+    route-policy ACI-PROD-SDS-01-OUT out
+   !
+  !
   neighbor 192.168.29.29
-  remote-as 65011
-  description ACI-PRO-SDS-01
-  address-family ipv4 unicast
-  route-policy ACI-PROD-SDS-01-IN in
-  route-policy ACI-PROD-SDS-01-OUT out
-
-
- vrf NSX-UDLY
-  rd 192.168.60.8:144
-  address-family ipv4 unicast
-   redistribute connected
-   redistribute static
-
-  neighbor 192.168.29.41
-  remote-as 65011
-  description ACI-PRO-NSX-UDLY
-  address-family ipv4 unicast
-  route-policy ACI-PROD-NSX-UDLY-IN in
-  route-policy ACI-PROD-NSX-UDLY-OUT out
-
-  neighbor 192.168.29.45
-  remote-as 65011
-  description ACI-PRO-NSX-UDLY
-  address-family ipv4 unicast
-  route-policy ACI-PROD-NSX-UDLY-IN in
-  route-policy ACI-PROD-NSX-UDLY-OUT out
-
-
+   remote-as 65011
+   description ACI-PRO-SDS-01
+   address-family ipv4 unicast
+    route-policy ACI-PROD-SDS-01-IN in
+    route-policy ACI-PROD-SDS-01-OUT out
+   !
+  !
+ !   
  vrf VMOTION
   rd 192.168.60.8:236
+  label mode per-vrf
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+  !
   neighbor 192.168.29.57
-  remote-as 65011
-  description ACI-PRO-VMOTION
-  address-family ipv4 unicast
-  route-policy ACI-PROD-VMOTION-IN in
-  route-policy ACI-PROD-VMOTION-OUT out
-
+   remote-as 65011
+   description ACI-PRO-VMOTION
+   address-family ipv4 unicast
+    route-policy ACI-PROD-VMOTION-IN in
+    route-policy ACI-PROD-VMOTION-OUT out
+   !
+  !
   neighbor 192.168.29.61
-  remote-as 65011
-  description ACI-PRO-VMOTION
+   remote-as 65011
+   description ACI-PRO-VMOTION
+   address-family ipv4 unicast
+    route-policy ACI-PROD-VMOTION-IN in
+    route-policy ACI-PROD-VMOTION-OUT out    
+   !
+  ! 
+ !
+ vrf NSX-UDLY
+  rd 192.168.60.8:144
+  label mode per-vrf
   address-family ipv4 unicast
-  route-policy ACI-PROD-VMOTION-IN in
-  route-policy ACI-PROD-VMOTION-OUT out
-
-
+   redistribute connected
+   redistribute static
+  !
+  neighbor 192.168.29.41
+   remote-as 65011
+   description ACI-PRO-NSX-UDLY
+   address-family ipv4 unicast
+    route-policy ACI-PROD-NSX-UDLY-IN in
+    route-policy ACI-PROD-NSX-UDLY-OUT out
+   !
+  !
+  neighbor 192.168.29.45
+   remote-as 65011
+   description ACI-PRO-NSX-UDLY
+   address-family ipv4 unicast
+    route-policy ACI-PROD-NSX-UDLY-IN in
+    route-policy ACI-PROD-NSX-UDLY-OUT out
+   !
+  !
+ !
+ vrf SISTEMAS
+  rd 192.168.60.8:107
+  label mode per-vrf
+  address-family ipv4 unicast
+   redistribute connected
+   redistribute static
+  !
+  neighbor 192.168.29.105
+   remote-as 65011
+   description ACI-PRO-SISTEMAS
+   address-family ipv4 unicast
+    route-policy ACI-PROD-SISTEMAS-IN in
+    route-policy ACI-PROD-SISTEMAS-OUT out
+   !
+  !
+  neighbor 192.168.29.109
+   remote-as 65011
+   description ACI-PRO-SISTEMAS
+   address-family ipv4 unicast
+    route-policy ACI-PROD-SISTEMAS-IN in
+    route-policy ACI-PROD-SISTEMAS-OUT out
+   !
+  !
+ !
+ vrf DATACENTER
+  rd 192.168.60.8:140
+  label mode per-vrf
+  address-family ipv4 unicast
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+   redistribute ospf 100 match internal external
+   redistribute ospf CORE match internal external nssa-external
+  !
+  neighbor 192.168.29.9
+   remote-as 65011
+   description ACI-PRO-DATACENTER
+   address-family ipv4 unicast
+    route-policy ACI-PROD-DATACENTER-IN in
+    route-policy ACI-PROD-DATACENTER-OUT out
+   !
+  !
+  neighbor 192.168.29.13
+   remote-as 65011
+   description ACI-PRO-DATACENTER
+   address-family ipv4 unicast
+    route-policy ACI-PROD-DATACENTER-IN in
+    route-policy ACI-PROD-DATACENTER-OUT out
+   !
+  !
+ !
+ vrf VIDEO-MGMT
+  rd 192.168.60.8:160
+  label mode per-vrf
+  address-family ipv4 unicast
+   network 0.0.0.0/0
+   redistribute connected
+   redistribute static
+   redistribute ospf CORE match internal external
+  !
+  neighbor 192.168.29.89
+   remote-as 65011
+   description ACI-PRO-VIDEO-MGMT
+   address-family ipv4 unicast
+    route-policy ACI-PROD-VIDEO-MGMT-IN in
+    route-policy ACI-PROD-VIDEO-MGMT-OUT out
+   !
+  !
+  neighbor 192.168.29.93
+   remote-as 65011
+   description ACI-PRO-VIDEO-MGMT
+   address-family ipv4 unicast
+    route-policy ACI-PROD-VIDEO-MGMT-IN in
+    route-policy ACI-PROD-VIDEO-MGMT-OUT out
+   !
+  !
+ !
  vrf VIDEO-MCAST
   rd 192.168.60.8:164
   address-family ipv4 unicast
    redistribute connected
    redistribute static
-
+   redistribute ospf CORE match internal external
+  !
   neighbor 192.168.29.73
-  remote-as 65011
-  description ACI-PRO-VIDEO-MCAST
-  address-family ipv4 unicast
-  route-policy ACI-PROD-VIDEO-MCAST-IN in
-  route-policy ACI-PROD-VIDEO-MCAST-OUT out
-
+   remote-as 65011
+   description ACI-PRO-VIDEO-MCAST
+   address-family ipv4 unicast
+    route-policy ACI-PROD-VIDEO-MCAST-IN in
+    route-policy ACI-PROD-VIDEO-MCAST-OUT out
+   !
+  !
   neighbor 192.168.29.77
-  remote-as 65011
-  description ACI-PRO-VIDEO-MCAST
-  address-family ipv4 unicast
-  route-policy ACI-PROD-VIDEO-MCAST-IN in
-  route-policy ACI-PROD-VIDEO-MCAST-OUT out
-
-
- vrf VIDEO-MGMT
-  rd 192.168.60.8:160
-  address-family ipv4 unicast
-   redistribute connected
-   redistribute static
-
-  neighbor 192.168.29.89
-  remote-as 65011
-  description ACI-PRO-VIDEO-MGMT
-  address-family ipv4 unicast
-  route-policy ACI-PROD-VIDEO-MGMT-IN in
-  route-policy ACI-PROD-VIDEO-MGMT-OUT out
-
-  neighbor 192.168.29.93
-  remote-as 65011
-  description ACI-PRO-VIDEO-MGMT
-  address-family ipv4 unicast
-  route-policy ACI-PROD-VIDEO-MGMT-IN in
-  route-policy ACI-PROD-VIDEO-MGMT-OUT out
-
-
-  vrf SISTEMAS
-  rd 192.168.60.8:107
-  address-family ipv4 unicast
-   redistribute connected
-   redistribute static
-
-  neighbor 192.168.29.105
-  remote-as 65011
-  description ACI-PRO-SISTEMAS
-  address-family ipv4 unicast
-  route-policy ACI-PROD-SISTEMAS-IN in
-  route-policy ACI-PROD-SISTEMAS-OUT out
-
-  neighbor 192.168.29.109
-  remote-as 65011
-  description ACI-PRO-SISTEMAS
-  address-family ipv4 unicast
-  route-policy ACI-PROD-SISTEMAS-IN in
-  route-policy ACI-PROD-SISTEMAS-OUT out
-
-
-  vrf WIFI2
-   rd 192.168.60.8:103
-    address-family ipv4 unicast
-    redistribute connected
-    redistribute static
-
-  neighbor 192.168.29.121
-  remote-as 65011
-  description ACI-PRO-WIFI2
-  address-family ipv4 unicast
-  route-policy ACI-PROD-WIFI2-IN in
-  route-policy ACI-PROD-WIFI2-OUT out
-
-  neighbor 192.168.29.125
-  remote-as 65011
-  description ACI-PRO-WIFI2
-  address-family ipv4 unicast
-  route-policy ACI-PROD-WIFI2-IN in
-  route-policy ACI-PROD-WIFI2-OUT out
+   remote-as 65011
+   description ACI-PRO-VIDEO-MCAST
+   address-family ipv4 unicast
+    route-policy ACI-PROD-VIDEO-MCAST-IN in
+    route-policy ACI-PROD-VIDEO-MCAST-OUT out
+   !
+  !
+ !
