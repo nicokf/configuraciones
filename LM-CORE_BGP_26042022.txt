@@ -1,6 +1,6 @@
 router bgp 27747
  vrf SDS-01
-  rd 192.168.60.8:142
+  rd 192.168.60.41:142
   label mode per-vrf
   address-family ipv4 unicast
    redistribute connected
@@ -24,7 +24,7 @@ router bgp 27747
   !
  !   
  vrf VMOTION
-  rd 192.168.60.8:236
+  rd 192.168.60.41:236
   label mode per-vrf
   address-family ipv4 unicast
    redistribute connected
@@ -48,7 +48,7 @@ router bgp 27747
   ! 
  !
  vrf NSX-UDLY
-  rd 192.168.60.8:144
+  rd 192.168.60.41:144
   label mode per-vrf
   address-family ipv4 unicast
    redistribute connected
@@ -72,7 +72,7 @@ router bgp 27747
   !
  !
  vrf SISTEMAS
-  rd 192.168.60.8:107
+  rd 192.168.60.41:107
   label mode per-vrf
   address-family ipv4 unicast
    redistribute connected
@@ -96,11 +96,14 @@ router bgp 27747
   !
  !
  vrf DATACENTER
-  rd 192.168.60.8:140
+  rd 192.168.60.41:140
   label mode per-vrf
   address-family ipv4 unicast
+   network 0.0.0.0/0
    redistribute connected
    redistribute static
+   redistribute ospf 100 match internal external
+   redistribute ospf CORE match internal external nssa-external
   !
   neighbor 192.168.29.9
    remote-as 65011
@@ -120,7 +123,7 @@ router bgp 27747
   !
  !
  vrf VIDEO-MGMT
-  rd 192.168.60.8:160
+  rd 192.168.60.41:160
   label mode per-vrf
   address-family ipv4 unicast
    network 0.0.0.0/0
@@ -146,7 +149,7 @@ router bgp 27747
   !
  !
  vrf VIDEO-MCAST
-  rd 192.168.60.8:164
+  rd 192.168.60.41:164
   address-family ipv4 unicast
    redistribute connected
    redistribute static
