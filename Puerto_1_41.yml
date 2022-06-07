@@ -1,0 +1,16 @@
+---
+- name: Configuracion_1/41_Port
+  hosts: AP-N93180-ACCESO-2
+  gather_facts: no
+  connection: ansible.netcommon.network_cli  
+  
+  
+  tasks:
+    - name: Configurar_Puerto   
+      cisco.iosxr.iosxr_config:
+        src: "{{ playbook_dir }}/Puerto_1_41.txt"
+
+      register: Puerto
+
+    - name: ImprimirConfig
+      debug: var=Puerto
