@@ -7,7 +7,7 @@
   
   tasks:
     - name: Configurar_Puerto   
-      cisco.iosxr.iosxr_config:
+      cisco.nxos.nxos_config:
         src: "{{ playbook_dir }}/Puerto_1_41.txt"
 
       register: Puerto
