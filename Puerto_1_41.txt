@@ -1,0 +1,4 @@
+interface Ethernet1/41
+  description ##CR## FL-MSW-ME3600-TOP
+  switchport access vlan 302
+  speed 1000
